@@ -26,6 +26,7 @@ export interface Prodotto {
   id: number;
   sku: string;
   nome: string;
+  descrizione?: string;
   prezzo: number;
   quantitaDisponibile: number;
   attivo: boolean;

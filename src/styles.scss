@@ -1,0 +1,182 @@
+/* =========================================
+   NEUROHOME ROBOTICS - DESIGN SYSTEM GLOBAL
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
+@import 'aos/dist/aos.css';
+
+:root {
+  /* Palette Colori (Allineata a Figma) */
+  --primary-dark: #030806;
+  --secondary-dark: #07110d;
+  --accent-cyan: #27e08f;
+  --accent-purple: #17a66c;
+  --text-primary: #FFFFFF;
+  --text-secondary: #b8d4c4;
+  --card-bg: rgba(7, 22, 15, 0.75);
+  --glass-border: rgba(70, 175, 122, 0.26);
+
+  /* Spaziature */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  /* Transizioni */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Fira Sans', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 500px at 15% -10%, rgba(39, 224, 143, 0.16), transparent 60%),
+    radial-gradient(1000px 520px at 90% 0%, rgba(23, 166, 108, 0.2), transparent 58%),
+    linear-gradient(180deg, #050a07 0%, var(--primary-dark) 50%, #020503 100%);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Utilities: Text Gradient */
+.text-gradient {
+  color: #eafff2;
+  text-shadow: 0 0 16px rgba(39, 224, 143, 0.4);
+  font-weight: 700;
+  display: inline-block;
+}
+
+/* Utilities: Glassmorphism / Cards figma-like */
+.glass-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 14px 32px rgba(1, 10, 6, 0.48);
+  backdrop-filter: blur(12px);
+}
+
+/* Utilities: Glow Effects */
+.glow-on-hover {
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.glow-on-hover:hover {
+  box-shadow: 0 0 20px rgba(39, 224, 143, 0.36);
+  transform: translateY(-2px);
+}
+
+/* Layout generico */
+.nova-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Scrollbar personalizzata */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--primary-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-purple);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
+/* Skeleton Loaders & Spinners UI/UX */
+
+@keyframes pulse-shimmer {
+  0% { background-color: rgba(255, 255, 255, 0.05); }
+  50% { background-color: rgba(255, 255, 255, 0.15); }
+  100% { background-color: rgba(255, 255, 255, 0.05); }
+}
+
+.skeleton {
+  animation: pulse-shimmer 2s infinite ease-in-out;
+  border-radius: 4px;
+}
+
+.skeleton-text {
+  height: 18px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+.skeleton-text.short {
+  width: 60%;
+}
+.skeleton-text.medium {
+  width: 80%;
+}
+.skeleton-img {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.skeleton-btn {
+  height: 40px;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.spinner-icon {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.disabled-btn {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  filter: grayscale(80%) !important;
+  border-color: rgba(255,255,255,0.1) !important;
+  box-shadow: none !important;
+}
+
+.skeleton-card { display: flex; flex-direction: column; overflow: hidden; padding: 0 !important; }
+.skeleton-card .skeleton-content { padding: 20px; flex-grow: 1; }
+.skeleton-card .skeleton-img { width: 100%; height: 220px; }
+
+/* ==== FORM VALIDATION FEEDBACK ==== */
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border-color: var(--accent-purple) !important;
+  box-shadow: 0 0 8px rgba(176, 38, 255, 0.4) !important;
+}
+
+input.ng-valid.ng-touched,
+textarea.ng-valid.ng-touched,
+select.ng-valid.ng-touched {
+  border-color: var(--accent-cyan) !important;
+}
