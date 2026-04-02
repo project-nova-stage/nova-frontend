@@ -24,7 +24,7 @@ import { LucideAngularModule, CheckCircle2, AlertCircle, Info, AlertTriangle, X 
         <div class="toast-message">
           {{ toast.message }}
         </div>
-        <button class="toast-close" (click)="toastService.remove(toast.id); $event.stopPropagation()">
+        <button type="button" class="toast-close" aria-label="Chiudi notifica" (click)="toastService.remove(toast.id); $event.stopPropagation()">
             <lucide-icon name="x" size="16"></lucide-icon>
         </button>
       </div>

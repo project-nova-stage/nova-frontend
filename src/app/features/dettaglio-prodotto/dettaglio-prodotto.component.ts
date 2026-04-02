@@ -13,7 +13,7 @@ import { LucideAngularModule, LogIn, ShoppingCart, Loader2 } from 'lucide-angula
   standalone: true,
   imports: [CommonModule, RouterModule, LucideAngularModule],
   template: `
-    <div class="dettaglio-container container" data-aos="fade-up">
+    <div class="dettaglio-container nova-container" data-aos="fade-up">
 
       <ng-container *ngIf="isLoading()">
         <div class="product-grid mt-4">

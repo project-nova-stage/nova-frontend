@@ -14,7 +14,7 @@ import { ToastService } from '../../services/toast.service';
   standalone: true,
   imports: [CommonModule, RouterModule, ProductCardComponent, FormsModule],
   template: `
-    <div class="prodotti-container container" data-aos="fade-up">
+    <div class="prodotti-container nova-container" data-aos="fade-up">
       <div class="page-header">
         <h1 class="font-orbitron text-gradient">Catalogo Dispositivi</h1>
         <p class="subtitle">Componenti e dispositivi per domotica, automazione e controllo energetico.</p>
@@ -164,7 +164,7 @@ export class ProdottiComponent implements OnInit {
         this.loading = false;
       },
       error: (err) => {
-        console.error('Errore nel carimento prodotti', err);
+        console.error('Errore nel caricamento prodotti', err);
         this.loading = false;
       }
     });

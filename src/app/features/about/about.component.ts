@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="about-container container" data-aos="fade-up">
+    <div class="about-container nova-container" data-aos="fade-up">
       <div class="hero-about">
         <h1 class="font-orbitron text-gradient title-glow">Living Systems, real world.</h1>
         <p class="subtitle mt-3">Un team tecnico che unisce design digitale e impianti smart per casa, business e strutture evolute.</p>

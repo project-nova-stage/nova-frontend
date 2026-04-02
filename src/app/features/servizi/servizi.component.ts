@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="servizi-container container" data-aos="fade-up">
+    <div class="servizi-container nova-container" data-aos="fade-up">
       <h1 class="font-orbitron text-gradient text-center mb-5">Servizi Smart Infrastructure</h1>
       <p class="subtitle text-center">Dal progetto alla messa in opera: impianti intelligenti con un look operativo moderno e misurabile.</p>
       

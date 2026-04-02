@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-not-found',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   template: `
-    <div class="not-found-container container" data-aos="fade-up">
+    <div class="not-found-container nova-container" data-aos="fade-up">
       <div class="hologram-container">
         <h1 class="font-orbitron error-code text-gradient">404</h1>
         <p class="hologram-text">SEGNALE PERSO</p>
@@ -16,7 +17,7 @@ import { CommonModule } from '@angular/common';
       <div class="message-box glass-panel">
         <p class="subtitle">La rotta spaziale richiesta non esiste nel database NeuroHome.</p>
         <p class="action-text">L'AI Assistente suggerisce:</p>
-        <a href="/" class="btn-main font-orbitron">Ritorna alla Base &lt;Home&gt;</a>
+        <a routerLink="/" class="btn-main font-orbitron">Ritorna alla Base &lt;Home&gt;</a>
       </div>
     </div>
   `,

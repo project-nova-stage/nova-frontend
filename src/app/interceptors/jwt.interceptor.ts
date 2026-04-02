@@ -20,7 +20,7 @@ export const jwtInterceptor: HttpInterceptorFn = (
 
   let requestDaInviare = req;
 
-  // Se abbiamo il token, lo cliniamo nella richiesta
+  // Se abbiamo il token, lo cloniamo nella richiesta
   if (token) {
     requestDaInviare = req.clone({
       setHeaders: {

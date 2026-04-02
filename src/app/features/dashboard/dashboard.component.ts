@@ -12,7 +12,7 @@ import { Prodotto } from '../../models/prodotto.model';
   standalone: true,
   imports: [CommonModule, FormsModule, LucideAngularModule],
   template: `
-    <div class="dashboard-container container" data-aos="fade-up">
+    <div class="dashboard-container nova-container" data-aos="fade-up">
       <!-- Header Area -->
       <div class="header-section">
         <h1 class="font-orbitron dashboard-title">Ciao {{ utenteName }}! Dashboard {{ userRole | titlecase }}</h1>
@@ -100,7 +100,7 @@ import { Prodotto } from '../../models/prodotto.model';
                     <th>SKU ID</th>
                     <th>Nome Prodotto</th>
                     <th>Prezzo</th>
-                    <th>Disponibilitï¿½</th>
+                    <th>Disponibilità</th>
                     <th>Stato</th>
                   </tr>
                 </thead>
@@ -108,7 +108,7 @@ import { Prodotto } from '../../models/prodotto.model';
                   <tr *ngFor="let item of adminShopItems">
                     <td>#NH-{{ item.id }}</td>
                     <td class="font-medium">{{ item.nome }}</td>
-                    <td class="text-cyan font-bold">ï¿½{{ item.prezzo | number:'1.2-2' }}</td>
+                    <td class="text-cyan font-bold">€{{ item.prezzo | number:'1.2-2' }}</td>
                     <td>
                       <div class="qty-bar">
                          <div class="qty-fill" [style.width.%]="(item.quantitaDisponibile / 200) * 100" [ngClass]="{'low-stock': item.quantitaDisponibile < 20}"></div>

@@ -8,7 +8,7 @@ import { ToastService } from '../../services/toast.service';
   standalone: true,
   imports: [CommonModule, FormsModule],
   template: `
-    <div class="support-container container" data-aos="fade-up">
+    <div class="support-container nova-container" data-aos="fade-up">
       <div class="row layout">
         <div class="col left-col glass-panel">
           <h1 class="font-orbitron text-gradient">Supporto Clienti</h1>
@@ -18,20 +18,20 @@ import { ToastService } from '../../services/toast.service';
           
           <div class="contact-info mt-4">
             <div class="info-item">
-              <span class="icon">ðŸ“</span> <p>Milano, Hub operativo NeuroHome</p>
+              <span class="icon">📍</span> <p>Milano, Hub operativo NeuroHome</p>
             </div>
             <div class="info-item">
-              <span class="icon">ðŸ“ž</span> <p>Linea assistenza: +39 388 873 4479</p>
+              <span class="icon">📞</span> <p>Linea assistenza: +39 388 873 4479</p>
             </div>
             <div class="info-item">
-              <span class="icon">âœ‰ï¸</span> <p>Email supporto: support&#64;neurohome.io</p>
+              <span class="icon">✉️</span> <p>Email supporto: support&#64;neurohome.io</p>
             </div>
           </div>
           
           <div class="mt-4 network-status">
             <p class="font-orbitron status-title">Stato servizio</p>
             <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
-            <p class="status-desc">99.98% operativita canali assistenza</p>
+            <p class="status-desc">99.98% operatività canali assistenza</p>
           </div>
         </div>
         

@@ -1,9 +1,11 @@
-import { Component, OnInit, OnDestroy, inject, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { LucideAngularModule, Home, Package, Bot, Wrench, LayoutDashboard, Info, Headset, ShoppingCart, User, LogIn, LogOut, Menu, X } from 'lucide-angular';
 import { filter, Subscription } from 'rxjs';
 import { AutenticazioneService } from '../../../services/autenticazione.service';
+import { CarrelloService } from '../../../services/carrello.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-navbar',
@@ -55,7 +57,7 @@ import { AutenticazioneService } from '../../../services/autenticazione.service'
           <!-- Mostra il carrello SOLO se siamo nella rotta dei prodotti -->
           <button *ngIf="isShopRoute" routerLink="/carrello" class="action-btn cart-btn glow-on-hover">
             <lucide-icon name="shopping-cart" [size]="20"></lucide-icon>
-            <span class="cart-badge">3</span>
+            <span *ngIf="carrelloService.items().length > 0" class="cart-badge">{{ carrelloService.items().length }}</span>
           </button>
           
           <!-- Auth Buttons -->
@@ -109,7 +111,7 @@ import { AutenticazioneService } from '../../../services/autenticazione.service'
         <div class="mobile-utility-row">
           <button *ngIf="isShopRoute" routerLink="/carrello" class="action-btn cart-btn glow-on-hover">
             <lucide-icon name="shopping-cart" [size]="20"></lucide-icon>
-            <span class="cart-badge">3</span>
+            <span *ngIf="carrelloService.items().length > 0" class="cart-badge">{{ carrelloService.items().length }}</span>
           </button>
 
           <ng-container *ngIf="!isLoggedIn; else mobileUserMenu">
@@ -265,7 +267,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private routerSubscription!: Subscription;
 
   private authService = inject(AutenticazioneService);
-  private cdr = inject(ChangeDetectorRef);
+  public carrelloService = inject(CarrelloService);
 
   constructor(private router: Router) {}
 
@@ -302,7 +304,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
           this.userRole = usr.ruolo ? usr.ruolo.toLowerCase() : '';
           this.utenteName = usr.nome;
        }
-    } else if (mockRole) {
+    } else if (!environment.production && mockRole) {
        this.isLoggedIn = true;
        this.userRole = mockRole;
        this.utenteName = mockRole === 'admin' ? 'SuperAdmin' : (mockRole === 'tecnico' ? 'Tecnico' : 'Ospite');
@@ -311,9 +313,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
        this.userRole = '';
        this.utenteName = null;
     }
-    
-    // Forza il ricalcolo della view se chiamato fuori dal ciclo di change detection standard
-    this.cdr.detectChanges();
   }
 
   logout() {

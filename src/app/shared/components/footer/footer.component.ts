@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule],
   template: `
     <footer class="footer">
-      <div class="container footer-content">
+      <div class="nova-container footer-content">
         <div class="footer-brand">
           <h2 class="font-orbitron text-gradient">Domotic Laboratories</h2>
           <p class="tagline">Domotica, automazione ed efficienza energetica per casa e impresa.</p>

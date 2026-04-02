@@ -11,7 +11,7 @@ import { LucideAngularModule, ShoppingCart, Trash2, CreditCard, Package } from '
   standalone: true,
   imports: [CommonModule, RouterModule, LucideAngularModule],
   template: `
-    <div class="cart-container container" data-aos="fade-up">
+    <div class="cart-container nova-container" data-aos="fade-up">
       <div class="cart-header">
         <h1 class="font-orbitron"><lucide-icon name="shopping-cart" class="cyan"></lucide-icon> Carrello Operativo</h1>
       </div>
@@ -34,7 +34,7 @@ import { LucideAngularModule, ShoppingCart, Trash2, CreditCard, Package } from '
             <div class="cart-item glass-panel" *ngFor="let item of carrelloService.items()">
               <div class="item-info">
                 <h3 class="font-orbitron text-cyan">{{ item.prodottoNome || ('Prodotto #' + item.prodottoId) }}</h3>
-                <p class="price font-mono">€{{ item.prezzoUnitario || 0 | number:'1.2-2' }}</p>
+                <p class="price font-mono">€{{ (item.prezzoUnitario || 0) | number:'1.2-2' }}</p>
               </div>
 
               <div class="item-actions">

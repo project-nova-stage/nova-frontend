@@ -20,7 +20,7 @@ import { RouterModule } from '@angular/router';
         </spline-viewer>
       </div>
 
-      <section class="hero-section container">
+      <section class="hero-section nova-container">
         <div class="hero-content" data-aos="fade-right" data-aos-delay="100">   
           <p class="hero-chip">Domotic Laboratories · Domotica e Robotica</p>
           <h1>La tua casa.<br>Più intelligente di te.</h1>
@@ -51,7 +51,7 @@ import { RouterModule } from '@angular/router';
         </div>
       </section>
 
-      <section class="features-section container">
+      <section class="features-section nova-container">
         <div class="section-title text-center" data-aos="fade-up">
           <h2 class="font-orbitron title-solid">L'Ecosistema Perfetto</h2>
           <p class="text-secondary">Tutto ciò che ti serve per una casa connessa, sicura ed efficiente.</p>
@@ -59,17 +59,30 @@ import { RouterModule } from '@angular/router';
 
         <div class="features-grid">
           <div class="feature-card glass-panel" data-aos="fade-up" data-aos-delay="100">
-            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="28" height="28">
+                <path d="M12 2.25l6 2v6.32c0 4.02-2.55 7.68-6 9.18-3.45-1.5-6-5.16-6-9.18V4.25l6-2zM8 6.02v4.55c0 2.96 1.74 5.77 4 7.1 2.26-1.33 4-4.14 4-7.1V6.02L12 4.9 8 6.02z" />
+              </svg>
+            </div>
             <h3>Sicurezza Avanzata</h3>
             <p>Telecamere e sensori che lavorano in sinergia per garantirti tranquillità h24. Ricevi notifiche istantanee ovunque tu sia.</p>
           </div>
           <div class="feature-card glass-panel" data-aos="fade-up" data-aos-delay="200">
-            <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="28" height="28">
+                <path d="M13 2L5 14h5l-1 8 8-12h-5l1-8z" />
+              </svg>
+            </div>
             <h3>Risparmio Energetico</h3>
             <p>Termostati intelligenti e gestione smart dei carichi per abbattere i costi in bolletta senza rinunciare al comfort.</p>
           </div>
           <div class="feature-card glass-panel" data-aos="fade-up" data-aos-delay="300">
-            <div class="feature-icon"><i class="fas fa-magic"></i></div>
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="28" height="28">
+                <path d="M4 20l7-2 9-9-5-5-9 9-2 7zm10.5-13.5L17 9l-6.5 6.5-2.5.7.7-2.5L14.5 6.5z" />
+                <path d="M19 3l2 2-1.5.5L19 7l-.5-1.5L17 5l1.5-.5L19 3z" />
+              </svg>
+            </div>
             <h3>Automazione Totale</h3>
             <p>Crea scenari personalizzati: luci, tapparelle e clima si adattano automaticamente in base alle tue abitudini.</p>
           </div>
@@ -77,7 +90,7 @@ import { RouterModule } from '@angular/router';
       </section>
 
       <section class="cta-section">
-        <div class="container" data-aos="zoom-in">
+        <div class="nova-container" data-aos="zoom-in">
           <div class="cta-box glass-panel">
             <h2 class="font-orbitron">Pronto ad evolvere la tua casa?</h2>
             <p>Inizia a costruire il tuo ecosistema smart step by step. Scopri il nostro catalogo o richiedi l'aiuto dell'intelligenza artificiale.</p>
