@@ -1,11 +1,11 @@
-import { Routes } from '@angular/router';
+﻿import { Routes } from '@angular/router';
 import { AutenticazioneGuard } from './guards/autenticazione.guard';
 
 export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent),
-    title: 'Nova - La casa più intelligente di te'
+    title: 'Nova - La casa piÃ¹ intelligente di te'
   },
   {
     path: 'login',
