@@ -140,7 +140,7 @@ import { AutenticazioneService, LoginRequest, RegistrazioneRequest, AuthResponse
 
     .login-card {
       width: 100%; max-width: 480px; padding: 40px; margin: 0 20px;
-      z-index: 10; background: rgba(5, 18, 11, 0.85); /* Leggermente pÃ¬Ã¹ scuro per risalto form */
+      z-index: 10; background: rgba(5, 18, 11, 0.85); /* Leggermente più scuro per risalto form */
       border: 1px solid rgba(255,255,255,0.05); border-radius: 20px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.6);
       transition: all 0.4s ease;
@@ -272,7 +272,7 @@ export class LoginComponent {
       },
       error: (err: any) => {
          this.loading = false;
-         this.errorMessage = 'Errore in fase di registrazione. Controlla i dati o se l\'email Ã¨ giÃ  in uso.';
+         this.errorMessage = 'Errore in fase di registrazione. Controlla i dati o se l\'email è già in uso.';
       }
     });
   }
