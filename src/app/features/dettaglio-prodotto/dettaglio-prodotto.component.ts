@@ -1,4 +1,4 @@
-﻿import { Component, OnInit, signal, inject } from '@angular/core';
+import { Component, OnInit, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Prodotto } from '../../models/prodotto.model';
@@ -11,7 +11,11 @@ import { LucideAngularModule, LogIn, ShoppingCart, Loader2 } from 'lucide-angula
 @Component({
   selector: 'app-dettaglio-prodotto',
   standalone: true,
-  imports: [CommonModule, RouterModule, LucideAngularModule],
+  imports: [
+    CommonModule, 
+    RouterModule, 
+    LucideAngularModule
+  ],
   template: `
     <div class="dettaglio-container nova-container" data-aos="fade-up">
 
@@ -62,7 +66,7 @@ import { LucideAngularModule, LogIn, ShoppingCart, Loader2 } from 'lucide-angula
             <h2 class="price text-gradient">&euro;{{ p.prezzo | number:'1.2-2' }}</h2>
 
             <p class="description">
-              {{ p.descrizione || "Un concentrato di tecnologia progettato specificamente per integrarsi nell'ecosistema NeuroHome. Garantisce performance eccezionali e sicurezza totale dei dati." }}
+              {{ p.descrizione || "Un concentrato di tecnologia progettato specificamente per integrarsi nell'ecosistema Dynamic Laboratories. Garantisce performance eccezionali e sicurezza totale dei dati." }}
             </p>
 
             <div class="status-box">

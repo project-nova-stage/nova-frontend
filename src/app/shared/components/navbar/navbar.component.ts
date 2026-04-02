@@ -10,7 +10,11 @@ import { environment } from '../../../../environments/environment';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterModule, LucideAngularModule],
+  imports: [
+    CommonModule, 
+    RouterModule, 
+    LucideAngularModule
+  ],
   template: `
     <nav class="navbar glass-panel-nav">
       <div class="nav-container">
@@ -20,7 +24,7 @@ import { environment } from '../../../../environments/environment';
             <lucide-icon name="bot" [size]="24" class="cyan-icon"></lucide-icon>
           </div>
           <div class="logo-text">
-            <span class="brand font-orbitron">Domotic Labs</span>
+            <span class="brand font-orbitron">Dynamic Laboratories</span>
             <span class="sub-brand">Living Systems</span>
           </div>
         </a>

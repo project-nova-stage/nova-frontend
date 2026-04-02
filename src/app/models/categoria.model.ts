@@ -1,5 +1,5 @@
 /**
- * Struttura gerarchica del catalogo Nova.
+ * Struttura gerarchica del catalogo Dynamic Laboratories.
  * Gestisce l'auto-referenzialità per permettere N livelli di sottocategorie.
  */
 export interface Categoria {

@@ -1,4 +1,4 @@
-﻿import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
@@ -8,7 +8,7 @@ import { filter } from 'rxjs/operators';
 import AOS from 'aos';
 
 /**
- * Componente root principale dell'applicazione Angular ("Nova").
+ * Componente root principale dell'applicazione Angular ("Dynamic Laboratories").
  * Funge da contenitore principale per il layout base dell'interfaccia.
  *
  * Include:

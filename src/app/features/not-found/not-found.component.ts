@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
       </div>
       
       <div class="message-box glass-panel">
-        <p class="subtitle">La rotta spaziale richiesta non esiste nel database NeuroHome.</p>
+        <p class="subtitle">La rotta richiesta non esiste nel database Dynamic Laboratories.</p>
         <p class="action-text">L'AI Assistente suggerisce:</p>
         <a routerLink="/" class="btn-main font-orbitron">Ritorna alla Base &lt;Home&gt;</a>
       </div>

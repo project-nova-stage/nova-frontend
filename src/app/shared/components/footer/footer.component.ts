@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
     <footer class="footer">
       <div class="nova-container footer-content">
         <div class="footer-brand">
-          <h2 class="font-orbitron text-gradient">Domotic Laboratories</h2>
+          <h2 class="font-orbitron text-gradient">Dynamic Laboratories</h2>
           <p class="tagline">Domotica, automazione ed efficienza energetica per casa e impresa.</p>
         </div>
         
@@ -32,7 +32,7 @@ import { RouterModule } from '@angular/router';
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2026 Domotic Laboratories. Tutti i diritti riservati.</p>
+        <p>&copy; 2026 Dynamic Laboratories. Tutti i diritti riservati.</p>
       </div>
     </footer>
   `,

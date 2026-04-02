@@ -1,16 +1,20 @@
-﻿import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { AutenticazioneService } from '../../services/autenticazione.service';  
 import { AssistenzaService } from '../../services/assistenza.service';
 import { ProdottiService } from '../../services/prodotti.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { LucideAngularModule, Activity, BarChart2, PackageOpen, Wrench, Package, Briefcase, History, DollarSign, Users, AlertCircle, Cpu } from 'lucide-angular';
+import { LucideAngularModule, Activity, BarChart2, PackageOpen, Wrench, Package, Briefcase, History, DollarSign, Users, AlertCircle, Cpu, Plus } from 'lucide-angular';
 import { Prodotto } from '../../models/prodotto.model';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, FormsModule, LucideAngularModule],
+  imports: [
+    CommonModule, 
+    FormsModule, 
+    LucideAngularModule
+  ],
   template: `
     <div class="dashboard-container nova-container" data-aos="fade-up">
       <!-- Header Area -->
@@ -200,7 +204,7 @@ export class DashboardComponent implements OnInit {
     private prodottiService = inject(ProdottiService);
 
     ngOnInit() {
-      // NON USA PIU' localStorage fallback, ma usa il segnale corretto
+      // NON USA PIÙ localStorage fallback, ma usa il segnale corretto
       const usr = this.authService.utenteCorrente();
       if (usr) {
         this.userRole = usr.ruolo ? usr.ruolo.toLowerCase() : null;

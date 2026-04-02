@@ -22,7 +22,7 @@ import { RouterModule } from '@angular/router';
 
       <section class="hero-section nova-container">
         <div class="hero-content" data-aos="fade-right" data-aos-delay="100">   
-          <p class="hero-chip">Domotic Laboratories · Domotica e Robotica</p>
+          <p class="hero-chip">Dynamic Laboratories · Domotica e Robotica</p>
           <h1>La tua casa.<br>Più intelligente di te.</h1>
           <p class="hero-subtitle">
             Un nuovo linguaggio visivo, una nuova esperienza: automazione, energia e sicurezza

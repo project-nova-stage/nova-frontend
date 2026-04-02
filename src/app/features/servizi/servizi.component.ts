@@ -1,4 +1,4 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -24,7 +24,7 @@ import { CommonModule } from '@angular/common';
           <div class="service-visual">
             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Impianti per aziende" />
           </div>
-          <h3 class="font-orbitron">Impianti per Aziende e Attivita</h3>
+          <h3 class="font-orbitron">Impianti per Aziende e Attività</h3>
           <p>Automazione per uffici, negozi e strutture B2B: accessi, monitoraggio ambientale, gestione energetica multi-zona.</p>
           <div class="price-tag">Da &euro;3.900 o su preventivo</div>
         </div>

@@ -30,7 +30,7 @@ export interface AuthResponse {
 })
 export class AutenticazioneService {
   private api = inject(ApiService);
-  private readonly TOKEN_KEY = 'nova_auth_token';
+  private readonly TOKEN_KEY = 'dynamic_labs_auth_token';
   
   // Signal reattivo per lo stato dell'utente corrente
   public utenteCorrente = signal<Utente | null>(null);
@@ -56,7 +56,7 @@ export class AutenticazioneService {
   /** Esegue il logout rimuovendo i dati locali. */
   public logout(): void {
     localStorage.removeItem(this.TOKEN_KEY);
-    localStorage.removeItem('nova_user_data');
+    localStorage.removeItem('dynamic_labs_user_data');
     this.utenteCorrente.set(null);
   }
 
@@ -73,12 +73,12 @@ export class AutenticazioneService {
   private gestisciRispostaAuth(risposta: AuthResponse): void {
     localStorage.setItem(this.TOKEN_KEY, risposta.token);
     // Salviamo l'utente base in locale per ripristino refresh pagina
-    localStorage.setItem('nova_user_data', JSON.stringify(risposta.utente));
+    localStorage.setItem('dynamic_labs_user_data', JSON.stringify(risposta.utente));
     this.utenteCorrente.set(risposta.utente);
   }
 
   private caricaUtenteDaStorage(): void {
-    const utenteSalvato = localStorage.getItem('nova_user_data');
+    const utenteSalvato = localStorage.getItem('dynamic_labs_user_data');
     if (utenteSalvato && this.token) {
       this.utenteCorrente.set(JSON.parse(utenteSalvato));
     }

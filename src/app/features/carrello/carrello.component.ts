@@ -1,4 +1,4 @@
-﻿import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AutenticazioneService } from '../../services/autenticazione.service';  
@@ -9,7 +9,11 @@ import { LucideAngularModule, ShoppingCart, Trash2, CreditCard, Package } from '
 @Component({
   selector: 'app-carrello',
   standalone: true,
-  imports: [CommonModule, RouterModule, LucideAngularModule],
+  imports: [
+    CommonModule, 
+    RouterModule, 
+    LucideAngularModule
+  ],
   template: `
     <div class="cart-container nova-container" data-aos="fade-up">
       <div class="cart-header">

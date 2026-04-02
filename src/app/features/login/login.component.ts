@@ -1,4 +1,4 @@
-﻿import { Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -8,7 +8,12 @@ import { AutenticazioneService, LoginRequest, RegistrazioneRequest, AuthResponse
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, LucideAngularModule, RouterModule],
+  imports: [
+    CommonModule, 
+    FormsModule, 
+    LucideAngularModule, 
+    RouterModule
+  ],
   template: `
     <div class="login-container parallax-bg" data-aos="fade-up">
       <div class="floating-shapes">
@@ -24,7 +29,7 @@ import { AutenticazioneService, LoginRequest, RegistrazioneRequest, AuthResponse
              <lucide-icon [name]="isRegisterMode ? 'user-plus' : 'fingerprint'" [size]="32" class="cyan-icon"></lucide-icon>
           </div>
           <h2 class="font-orbitron text-gradient">{{ isRegisterMode ? 'Crea Account' : 'Accesso Portale' }}</h2>
-          <p class="subtitle">{{ isRegisterMode ? 'Unisciti al network Domotic Labs.' : 'Inserisci le tue credenziali per entrare.' }}</p>
+          <p class="subtitle">{{ isRegisterMode ? 'Unisciti al network Dynamic Laboratories.' : 'Inserisci le tue credenziali per entrare.' }}</p>
         </div>
 
         <div class="auth-tabs">
@@ -42,7 +47,7 @@ import { AutenticazioneService, LoginRequest, RegistrazioneRequest, AuthResponse
             <label>Email Diretta</label>
             <div class="input-wrapper">
               <lucide-icon name="mail" [size]="18" class="input-icon"></lucide-icon>
-              <input type="email" name="email" [(ngModel)]="loginData.email" placeholder="esempio@domoticlaboratories.com" required>
+              <input type="email" name="email" [(ngModel)]="loginData.email" placeholder="esempio@dynamiclaboratories.it" required>
             </div>
           </div>
 
@@ -50,7 +55,10 @@ import { AutenticazioneService, LoginRequest, RegistrazioneRequest, AuthResponse
             <label>Password</label>
             <div class="input-wrapper">
               <lucide-icon name="lock" [size]="18" class="input-icon"></lucide-icon>
-              <input type="password" name="password" [(ngModel)]="loginData.password" placeholder="********" required>
+              <input [type]="showPassword ? 'text' : 'password'" name="password" [(ngModel)]="loginData.password" placeholder="********" required>
+              <button type="button" class="password-toggle" (click)="showPassword = !showPassword" [attr.aria-label]="showPassword ? 'Nascondi password' : 'Mostra password'">
+                <lucide-icon [name]="showPassword ? 'eye-off' : 'eye'" [size]="18"></lucide-icon>
+              </button>
             </div>
           </div>
 
@@ -102,7 +110,10 @@ import { AutenticazioneService, LoginRequest, RegistrazioneRequest, AuthResponse
             <label>Password Protetta</label>
             <div class="input-wrapper">
               <lucide-icon name="lock" [size]="18" class="input-icon"></lucide-icon>
-              <input type="password" name="regPassword" [(ngModel)]="registerData.password" placeholder="Minimo 6 caratteri" required>
+              <input [type]="showRegisterPassword ? 'text' : 'password'" name="regPassword" [(ngModel)]="registerData.password" placeholder="Minimo 6 caratteri" required>
+              <button type="button" class="password-toggle" (click)="showRegisterPassword = !showRegisterPassword" [attr.aria-label]="showRegisterPassword ? 'Nascondi password' : 'Mostra password'">
+                <lucide-icon [name]="showRegisterPassword ? 'eye-off' : 'eye'" [size]="18"></lucide-icon>
+              </button>
             </div>
           </div>
 
@@ -146,7 +157,7 @@ import { AutenticazioneService, LoginRequest, RegistrazioneRequest, AuthResponse
       transition: all 0.4s ease;
     }
     .register-mode {
-      max-width: 520px; /* Un po' piu largo per la reg */
+      max-width: 520px; /* Un po' più largo per la reg */
     }
 
     .login-header { text-align: center; margin-bottom: 24px; }
@@ -177,10 +188,37 @@ import { AutenticazioneService, LoginRequest, RegistrazioneRequest, AuthResponse
     .input-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-secondary); }
     input {
       width: 100%; padding: 14px 16px 14px 44px; border-radius: 10px;
-      background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
       color: var(--text-primary); font-family: 'Inter', sans-serif; transition: all 0.2s;
     }
-    input:focus { outline: none; border-color: rgba(39,224,143,0.65); box-shadow: 0 0 0 2px rgba(39,224,143,0.16); }
+    input:focus { outline: none; border-color: var(--accent-cyan); box-shadow: 0 0 12px rgba(39,224,143,0.3); background: rgba(255,255,255,0.08); }
+    
+    .password-toggle {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      z-index: 5;
+    }
+    .password-toggle:hover {
+      color: var(--accent-cyan);
+      transform: translateY(-50%) scale(1.1);
+    }
+    .password-toggle lucide-icon {
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .password-toggle:active lucide-icon {
+      transform: scale(0.9);
+    }
     
     select.admin-input-select {
       width: 100%; padding: 14px 16px 14px 44px; border-radius: 10px;
@@ -193,14 +231,19 @@ import { AutenticazioneService, LoginRequest, RegistrazioneRequest, AuthResponse
 
     .btn-main { 
         width: 100%; padding: 16px; border: none; font-size: 1.05rem; 
-        font-weight: 700; /* Incrementato contrast */
+        font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
         border-radius: 12px; cursor: pointer; 
-        background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%); 
-        color: #000 !important; /* Forza contrasto scuro sul verde brillante! */
-        transition: all 0.2s; 
+        background: linear-gradient(135deg, #27e08f 0%, #17a66c 100%); 
+        color: #ffffff !important; 
+        transition: all 0.3s ease; 
     }
-    .btn-main:disabled { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.3) !important; cursor: not-allowed; box-shadow: none; pointer-events: none; }
-    .btn-main:not(:disabled):hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(39,224,143,0.5); }
+    .btn-main:disabled { 
+        background: rgba(255,255,255,0.08) !important; 
+        color: rgba(255,255,255,0.2) !important; 
+        cursor: not-allowed; 
+        border: 1px solid rgba(255,255,255,0.05);
+    }
+    .btn-main:not(:disabled):hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(39,224,143,0.4); }
 
     .border-t-divider { border-top: 1px solid rgba(255,255,255,0.08); }
     .cyan-link { color: var(--accent-cyan); text-decoration: none; font-weight: 600; transition: color 0.2s;}
@@ -221,6 +264,8 @@ export class LoginComponent {
   
   isRegisterMode = false;
   loading = false;
+  showPassword = false;
+  showRegisterPassword = false;
   errorMessage = '';
 
   loginData: LoginRequest = { email: '', password: '' };
@@ -266,7 +311,7 @@ export class LoginComponent {
     this.authService.registra(this.registerData).subscribe({
       next: (res: any) => {
          this.loading = false;
-         // Il registra solitamente effettua gia la creazione, alcuni framework ritornano auth response.
+         // Il registra solitamente effettua già la creazione, alcuni framework ritornano auth response.
          // Se entra qua: Successo!
          this.router.navigate(['/dashboard']);
       },

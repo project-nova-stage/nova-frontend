@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
         <h1 class="title font-orbitron text-gradient">Assistente preventivi in addestramento</h1>
         <p class="mt-3">
           Stiamo finalizzando il motore conversazionale per offrirti un assistente casa realmente utile,
-          proattivo e coerente con l'ecosistema Nova.
+          proattivo e coerente con l'ecosistema Dynamic Laboratories.
         </p>
         <div class="progress-container mt-4">
           <div class="progress-bar"></div>

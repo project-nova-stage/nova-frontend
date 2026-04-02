@@ -1,4 +1,4 @@
-﻿import { Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ToastService } from '../../services/toast.service';
@@ -18,13 +18,13 @@ import { ToastService } from '../../services/toast.service';
           
           <div class="contact-info mt-4">
             <div class="info-item">
-              <span class="icon">📍</span> <p>Milano, Hub operativo NeuroHome</p>
+              <span class="icon">📍</span> <p>Milano, Hub operativo Dynamic Laboratories</p>
             </div>
             <div class="info-item">
               <span class="icon">📞</span> <p>Linea assistenza: +39 388 873 4479</p>
             </div>
             <div class="info-item">
-              <span class="icon">✉️</span> <p>Email supporto: support&#64;neurohome.io</p>
+              <span class="icon">✉️</span> <p>Email supporto: support&#64;dynamiclaboratories.it</p>
             </div>
           </div>
           
@@ -52,7 +52,7 @@ import { ToastService } from '../../services/toast.service';
             <div class="form-group">
               <label>Modulo Danneggiato (Tipo Dispositivo)</label>
               <select class="glass-input" name="tipoModulo" ngModel required>
-                <option value="hub">Neuro Hub Centrale</option>
+                <option value="hub">Dynamic Hub Centrale</option>
                 <option value="vacuum">Robot Pulizia</option>
                 <option value="cam">Sistema Sicurezza/Camera</option>
                 <option value="other">Altro / Impianto Energia</option>
