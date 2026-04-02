@@ -1,4 +1,3 @@
 export const environment = {
   production: true,
-  apiUrl: '/api/v1' // Relative URL for production; configure via reverse proxy
-};
+  apiUrl: 'https://nova-backend-u9z7.onrender.com/api/v1' 
