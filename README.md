@@ -1,59 +1,23 @@
-# TempApp
+# nova-frontend
+Interfaccia utente (Frontend) sviluppata in Angular per il sistema gestionale Project Nova. Include la logica di visualizzazione ordini, gestione carrello.
+# 🎨 Project Nova - Frontend (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+Questa è la parte client del sistema gestionale **Project Nova**, dedicata all'esperienza utente e all'interazione con il database tramite API.
 
-## Development server
+## 🚀 Caratteristiche principali
+- 📦 **Gestione Catalogo:** Visualizzazione prodotti dinamica.
+- 🛒 **Carrello Intelligente:** Logica di acquisto con suggerimenti cross-selling.
+- 👤 **Dashboard Cliente:** Area riservata per il monitoraggio ordini.
 
-To start a local development server, run:
+## 🛠️ Tecnologie Utilizzate
+- **Framework:** Angular 
+- **Styling:** CSS/SCSS (o Bootstrap/Tailwind se deciderete di usarli)
+- **State Management:** RxJS
 
-```bash
-ng serve
-```
+## 🔧 Installazione e Avvio locale
+1. `git clone [link-del-repo]`
+2. `npm install`
+3. `ng serve`
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+*Pagina in fase di creazione*
