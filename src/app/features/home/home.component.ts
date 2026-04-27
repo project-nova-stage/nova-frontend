@@ -134,8 +134,9 @@ import { RouterModule } from '@angular/router';
     }
 
     spline-viewer {
-      width: 100vw;
+      width: calc(100vw + 120px);
       height: 100vh;
+      margin-left: -60px; /* bilancia l'allargamento per mantenere l'onda centrata */
       filter: brightness(1.35) saturate(1.25) contrast(1.05);
     }
 
@@ -282,7 +283,7 @@ import { RouterModule } from '@angular/router';
 
     @media (max-width: 1024px) {
       .spline-background { opacity: 0.8; height: 115vh; }
-      spline-viewer { transform: none; width: 100vw; height: 100vh; }
+      spline-viewer { transform: none; width: calc(100vw + 120px); height: 115vh; margin-left: -60px; }
       h1 { font-size: 3.2rem; }
       .hero-kpis { grid-template-columns: repeat(2, 1fr); margin-top: 20px; }
       .hero-content { padding-top: 20px; }
