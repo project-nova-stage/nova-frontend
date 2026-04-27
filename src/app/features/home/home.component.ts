@@ -120,9 +120,7 @@ import { RouterModule } from '@angular/router';
       z-index: 0;
       pointer-events: auto;
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      /* Remove flex properties that clash with transform on canvas */
     }
 
     .mobile-fallback {
@@ -134,12 +132,16 @@ import { RouterModule } from '@angular/router';
     }
 
     spline-viewer {
-      width: 140vw;
-      height: 140vh;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.4);
+      width: 100vw;
+      height: 100vh;
+      min-width: 100vw;
+      min-height: 100vh;
       filter: brightness(1.35) saturate(1.25) contrast(1.05);
-      transform: scale(1.15);
-      transform-origin: center center;
-      flex-shrink: 0; /* Impedisce che il browser lo rimpicciolisca */
+      pointer-events: auto;
     }
 
     .hero-section {
@@ -285,7 +287,7 @@ import { RouterModule } from '@angular/router';
 
     @media (max-width: 1024px) {
       .spline-background { opacity: 0.8; height: 115vh; }
-      spline-viewer { transform: scale(1.15); width: 140vw; height: 140vh; }
+      spline-viewer { transform: translate(-50%, -50%) scale(1.4); width: 100vw; height: 115vh; }
       h1 { font-size: 3.2rem; }
       .hero-kpis { grid-template-columns: repeat(2, 1fr); margin-top: 20px; }
       .hero-content { padding-top: 20px; }
